@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Помощь от пьяного Рика</title>
     <style>
         * {
@@ -13,154 +13,132 @@
 
         body {
             background: radial-gradient(circle at 20% 30%, #0b3b2f, #03140f);
-            font-family: 'Courier New', 'Consolas', monospace;
+            font-family: 'Courier New', monospace;
             min-height: 100vh;
-            padding: 1.5rem;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* основная карточка */
         .portal-card {
-            max-width: 850px;
+            max-width: 800px;
             width: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(3px);
+            background: rgba(0, 0, 0, 0.9);
             border: 3px solid #6feb9e;
-            border-radius: 48px;
-            padding: 1.5rem;
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 0 0 2px #2e6b4e inset;
+            border-radius: 42px;
+            padding: 25px;
         }
 
-        /* заголовок */
         h1 {
             font-size: 1.8rem;
             text-align: center;
-            background: linear-gradient(135deg, #f0ffe0, #a0f5c0);
+            background: linear-gradient(135deg, #ffffff, #aaffcc);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin: 0.2rem 0 0.5rem 0;
-            letter-spacing: -1px;
+            margin-bottom: 15px;
         }
 
-        /* пьяный рик эмодзи */
         .drunk-rick {
             text-align: center;
-            font-size: 4.5rem;
-            filter: drop-shadow(0 4px 6px #1e5a43);
-            margin: 0.3rem 0;
+            font-size: 4rem;
+            margin-bottom: 10px;
         }
 
-        /* инструкция */
         .howto {
-            background: #0e2a21;
+            background: #0d2a20;
             border-left: 6px solid #95f0b6;
-            padding: 0.8rem 1.2rem;
-            border-radius: 28px;
-            margin: 1rem 0 1.5rem;
-            color: #e2ffe8;
-            font-size: 0.85rem;
-            font-weight: bold;
+            padding: 12px;
+            border-radius: 24px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-size: 0.9rem;
         }
 
-        /* карточка напитка */
         .drink-card {
-            background: #0b211c;
-            border-radius: 32px;
-            border: 1px solid #428b64;
-            padding: 0.7rem 1rem;
-            margin-bottom: 0.9rem;
-            transition: 0.1s linear;
+            background: #0a241e;
+            border-radius: 30px;
+            border: 1px solid #4b9e74;
+            padding: 12px 15px;
+            margin-bottom: 12px;
         }
 
         .drink-title {
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            color: #e4ffe6;
-            margin-bottom: 0.4rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            color: #ffffff;
+            margin-bottom: 8px;
         }
 
         .input-group {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 15px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
-            margin-bottom: 0.6rem;
         }
 
         .input-group label {
-            color: #cef5e0;
+            color: #ffffff;
             font-weight: bold;
-            background: #05261e;
-            padding: 0 10px;
-            border-radius: 40px;
+            font-size: 1rem;
         }
 
         .input-group input {
-            background: #0c2e24;
-            border: 2px solid #64bf8c;
-            padding: 6px 12px;
-            border-radius: 60px;
-            color: white;
+            background: #f0fff0;
+            border: 2px solid #6feb9e;
+            padding: 8px 12px;
+            border-radius: 50px;
+            color: #000000;
             font-size: 1rem;
             width: 110px;
             text-align: center;
             font-weight: bold;
-            font-family: monospace;
-        }
-
-        .input-group input:focus {
-            border-color: #e6ffb3;
-            outline: none;
-            background: #194f3d;
         }
 
         .result-block {
-            background: #00000077;
-            border-radius: 26px;
-            padding: 8px 14px;
+            background: #000000aa;
+            border-radius: 28px;
+            padding: 10px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 8px;
-            backdrop-filter: blur(2px);
+            gap: 10px;
+        }
+
+        /* ГЛАВНОЕ — ВЕСЬ ТЕКСТ В РЕЗУЛЬТАТЕ БЕЛЫЙ */
+        .result-block span,
+        .result-block .hours,
+        .result-block .comment {
+            color: #ffffff !important;
         }
 
         .result-time {
-            background: #10382c;
-            padding: 4px 14px;
-            border-radius: 60px;
-            color: #e7ffcf;
+            background: #0c5a40;
+            padding: 5px 15px;
+            border-radius: 50px;
+            color: #ffffff;
             font-weight: bold;
-            font-size: 1rem;
         }
 
-        /* советы рика */
         .rick-advice {
-            margin-top: 1.8rem;
+            margin-top: 20px;
             background: #051d16;
-            border-radius: 36px;
-            border: 2px solid #a4f7bc;
-            padding: 1rem;
+            border-radius: 30px;
+            border: 2px solid #9eff7a;
+            padding: 15px;
         }
 
         .advice-header {
             text-align: center;
-            margin-bottom: 0.8rem;
+            margin-bottom: 12px;
         }
 
         .advice-header h3 {
-            color: #bef5d0;
+            color: #ffffff;
             font-size: 1.3rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .button-group {
@@ -168,296 +146,179 @@
             flex-wrap: wrap;
             gap: 12px;
             justify-content: center;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
 
         .rick-btn {
-            background: #15382e;
+            background: #1e3a30;
             border: 2px solid #6feb9e;
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 60px;
             color: white;
             font-weight: bold;
-            font-family: 'Courier New', monospace;
-            font-size: 0.75rem;
+            font-family: monospace;
+            font-size: 0.8rem;
             cursor: pointer;
-            transition: 0.2s;
         }
 
         .rick-btn:hover {
-            background: #2b785b;
-            transform: scale(0.97);
-            border-color: #f9ffb0;
+            background: #2e8b6b;
         }
 
         .advice-output {
             background: #000000aa;
-            border-radius: 32px;
-            padding: 12px 16px;
-            color: #fcf7cf;
+            border-radius: 28px;
+            padding: 12px;
             text-align: center;
-            border-left: 5px solid #a1ffbc;
-            font-weight: bold;
+            border-left: 5px solid #6feb9e;
+            color: #ffffff;
         }
 
         .footer {
-            margin-top: 1.5rem;
+            margin-top: 20px;
             text-align: center;
-            font-size: 0.7rem;
-            color: #9ccdaf;
-            border-top: 1px solid #2c6e4f;
-            padding-top: 0.9rem;
+            font-size: 0.75rem;
+            border-top: 1px solid #2f724f;
+            padding-top: 12px;
+            color: #ffffff;
         }
 
         .footer input, .footer select {
-            background: #1a3a2f;
-            border: 1px solid #5faa81;
-            color: white;
+            background: #e0ffe8;
+            border: 1px solid #6feb9e;
+            color: #000000;
             padding: 4px 8px;
-            border-radius: 28px;
+            border-radius: 20px;
             font-weight: bold;
         }
 
         .extra-portal {
             text-align: center;
-            font-size: 1.8rem;
-            margin: 0.5rem 0 0.2rem;
-            opacity: 0.7;
-        }
-
-        /* адаптация */
-        @media (max-width: 550px) {
-            .portal-card {
-                padding: 1rem;
-            }
-            .drink-title {
-                font-size: 1.1rem;
-            }
-            .result-block {
-                flex-direction: column;
-                align-items: stretch;
-            }
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
-
 <div class="portal-card">
-    <!-- пьяный рик (эмодзи) -->
-    <div class="drunk-rick">
-        🧪🍻🥴🔫
-    </div>
-
+    <div class="drunk-rick">🧪🍺🔫</div>
     <h1>🍸 ПОМОЩЬ ОТ ПЬЯНОГО РИКА</h1>
 
     <div class="howto">
-        💡 <strong>КАК ЖЕ ЗЛОБНО ПОЛЬЗОВАТЬСЯ?</strong><br>
-        ► Введи миллилитры выпитого — Рик рассчитает время вытрезвления.<br>
-        ► Внизу можно сменить вес и пол (они запомнятся).<br>
-        ► Кнопки внизу — научные советы от великого Рика Санчеса.
+        ⚡ Введи сколько выпил (мл) — Рик скажет, через сколько протрезвеешь.<br>
+        🔽 Внизу можно указать вес и пол.
     </div>
 
-    <!-- ВСЕ НАПИТКИ (универсальный список) -->
     <div class="drink-card" data-alc="40">
         <div class="drink-title">❄️ ВОДКА (40%)</div>
-        <div class="input-group"><label>🍾 мл:</label><input type="number" class="ml-input" value="0" step="10" placeholder="0"></div>
-        <div class="result-block"><span>⏱️ протрезвление:</span><span class="hours">— ч</span><span class="comment">введи дозу</span></div>
+        <div class="input-group"><label>🍾 мл:</label><input type="number" class="ml-input" value="0" step="10"></div>
+        <div class="result-block"><span>⏱️ Протрезвление:</span><span class="hours">— ч</span><span class="comment">введи объём</span></div>
     </div>
 
     <div class="drink-card" data-alc="12">
         <div class="drink-title">🍷 ВИНО (12%)</div>
-        <div class="input-group"><label>🍷 мл:</label><input type="number" class="ml-input" value="0" step="20" placeholder="0"></div>
-        <div class="result-block"><span>⏱️ протрезвление:</span><span class="hours">— ч</span><span class="comment">введи дозу</span></div>
+        <div class="input-group"><label>🍷 мл:</label><input type="number" class="ml-input" value="0" step="20"></div>
+        <div class="result-block"><span>⏱️ Протрезвление:</span><span class="hours">— ч</span><span class="comment">введи объём</span></div>
     </div>
 
     <div class="drink-card" data-alc="55">
-        <div class="drink-title">⚡ САМОГОН (55%)</div>
-        <div class="input-group"><label>🏺 мл:</label><input type="number" class="ml-input" value="0" step="10" placeholder="0"></div>
-        <div class="result-block"><span>⏱️ протрезвление:</span><span class="hours">— ч</span><span class="comment">введи дозу</span></div>
+        <div class="drink-title">🔥 САМОГОН (55%)</div>
+        <div class="input-group"><label>🏺 мл:</label><input type="number" class="ml-input" value="0" step="10"></div>
+        <div class="result-block"><span>⏱️ Протрезвление:</span><span class="hours">— ч</span><span class="comment">введи объём</span></div>
     </div>
 
     <div class="drink-card" data-alc="43">
         <div class="drink-title">🥃 ВИСКИ (43%)</div>
-        <div class="input-group"><label>🥃 мл:</label><input type="number" class="ml-input" value="0" step="10" placeholder="0"></div>
-        <div class="result-block"><span>⏱️ протрезвление:</span><span class="hours">— ч</span><span class="comment">введи дозу</span></div>
+        <div class="input-group"><label>🥃 мл:</label><input type="number" class="ml-input" value="0" step="10"></div>
+        <div class="result-block"><span>⏱️ Протрезвление:</span><span class="hours">— ч</span><span class="comment">введи объём</span></div>
     </div>
 
     <div class="drink-card" data-alc="5">
         <div class="drink-title">🍺 ПИВО (5%)</div>
-        <div class="input-group"><label>🍺 мл:</label><input type="number" class="ml-input" value="0" step="50" placeholder="0"></div>
-        <div class="result-block"><span>⏱️ протрезвление:</span><span class="hours">— ч</span><span class="comment">введи дозу</span></div>
+        <div class="input-group"><label>🍺 мл:</label><input type="number" class="ml-input" value="0" step="50"></div>
+        <div class="result-block"><span>⏱️ Протрезвление:</span><span class="hours">— ч</span><span class="comment">введи объём</span></div>
     </div>
 
     <div class="drink-card" data-alc="70">
         <div class="drink-title">🧪 АБСЕНТ (70%)</div>
-        <div class="input-group"><label>🧴 мл:</label><input type="number" class="ml-input" value="0" step="5" placeholder="0"></div>
-        <div class="result-block"><span>⏱️ протрезвление:</span><span class="hours">— ч</span><span class="comment">введи дозу</span></div>
+        <div class="input-group"><label>🧴 мл:</label><input type="number" class="ml-input" value="0" step="5"></div>
+        <div class="result-block"><span>⏱️ Протрезвление:</span><span class="hours">— ч</span><span class="comment">введи объём</span></div>
     </div>
 
-    <!-- БЛОК СОВЕТОВ РИКА -->
     <div class="rick-advice">
-        <div class="advice-header">
-            <h3>🧪 РИК РЕКОМЕНДУЕТ 🧪</h3>
-        </div>
+        <div class="advice-header"><h3>🧠 СОВЕТ ОТ РИКА 🧠</h3></div>
         <div class="button-group">
             <button class="rick-btn" data-advice="drink">🍺 Как пить и не пьянеть?</button>
             <button class="rick-btn" data-advice="sober">💊 Как быстро протрезветь?</button>
             <button class="rick-btn" data-advice="nausea">🤢 Что делать если тошнит?</button>
         </div>
-        <div class="advice-output" id="adviceMessage">
-            <strong>Рик:</strong> Нажми на кнопку, ничтожество
-        </div>
+        <div class="advice-output" id="adviceMessage"><strong>Рик:</strong> Нажми на кнопку</div>
     </div>
 
-    <div class="extra-portal">
-        🌌 PORTAL GUN — C-137 🌌
-    </div>
+    <div class="extra-portal">🌌 PORTAL C-137 🌌</div>
 
     <div class="footer">
-        ⚙️ <label>Вес (кг):</label> <input type="number" id="globalWeight" value="80" step="5" min="30" max="180">
-        &nbsp;|&nbsp;
-        <label>Пол:</label>
+        ⚙️ Вес: <input type="number" id="globalWeight" value="80" step="5"> кг
+        &nbsp; Пол:
         <select id="globalGender">
-            <option value="male">Мужчина (r=0.7)</option>
-            <option value="female">Женщина (r=0.6)</option>
+            <option value="male">Мужчина</option>
+            <option value="female">Женщина</option>
         </select>
-        <div style="margin-top: 8px; font-size: 0.65rem;">🧬 данные сохраняются в браузере — не пропадут</div>
     </div>
 </div>
 
 <script>
-    (function() {
-        // ----- ФОРМУЛА ВИДМАРКА -----
-        const ELIM_RATE = 0.15;       // г/л в час
-
-        function getDistributionCoeff(gender) {
-            return gender === 'male' ? 0.7 : 0.6;
-        }
-
-        function calculateHours(volumeMl, alcPercent, weightKg, gender) {
-            if (volumeMl <= 0) return 0;
-            const ethanolGrams = volumeMl * (alcPercent / 100) * 0.789;
-            const rCoeff = getDistributionCoeff(gender);
-            let promille = ethanolGrams / (weightKg * rCoeff);
-            if (promille < 0) promille = 0;
-            let hours = promille / ELIM_RATE;
-            if (hours > 0 && hours < 0.2) hours = 0.2;
-            return Math.round(hours * 2) / 2;
-        }
-
-        // ------ ЗАГРУЗКА / СОХРАНЕНИЕ ДАННЫХ (вес, пол) ------
-        function loadUserSettings() {
-            let savedWeight = localStorage.getItem('rick_weight');
-            let savedGender = localStorage.getItem('rick_gender');
-            if (savedWeight !== null && !isNaN(parseFloat(savedWeight))) {
-                document.getElementById('globalWeight').value = parseFloat(savedWeight);
+    const ELIM = 0.15;
+    function getR(g) { return g === 'male' ? 0.7 : 0.6; }
+    function calc(ml, alc, w, g) {
+        if (ml <= 0) return 0;
+        let ethanol = ml * (alc / 100) * 0.789;
+        let promille = ethanol / (w * getR(g));
+        let hours = promille / ELIM;
+        if (hours < 0.2 && hours > 0) hours = 0.2;
+        return Math.round(hours * 2) / 2;
+    }
+    function update() {
+        let w = parseFloat(document.getElementById('globalWeight').value);
+        if (isNaN(w) || w <= 0) w = 80;
+        let g = document.getElementById('globalGender').value;
+        document.querySelectorAll('.drink-card').forEach(card => {
+            let alc = parseFloat(card.dataset.alc);
+            let input = card.querySelector('.ml-input');
+            let ml = parseFloat(input.value);
+            if (isNaN(ml)) ml = 0;
+            let hours = calc(ml, alc, w, g);
+            let hoursSpan = card.querySelector('.hours');
+            let commentSpan = card.querySelector('.comment');
+            if (ml <= 0) {
+                hoursSpan.innerText = '— ч';
+                commentSpan.innerText = '🧪 введи миллилитры';
+            } else {
+                hoursSpan.innerText = hours + ' ч';
+                if (hours < 1) commentSpan.innerText = '✅ почти трезв, подожди';
+                else if (hours < 3) commentSpan.innerText = '🤨 за руль рано, жди ' + hours + ' ч';
+                else if (hours < 6) commentSpan.innerText = '💀 ' + hours + ' ч овощем будешь';
+                else commentSpan.innerText = '⚠️ Рик в шоке! трезвость через ' + hours + ' ч';
             }
-            if (savedGender === 'male' || savedGender === 'female') {
-                document.getElementById('globalGender').value = savedGender;
-            }
-        }
-
-        function saveUserSettings() {
-            let w = parseFloat(document.getElementById('globalWeight').value);
-            let g = document.getElementById('globalGender').value;
-            if (!isNaN(w)) localStorage.setItem('rick_weight', w);
-            localStorage.setItem('rick_gender', g);
-        }
-
-        // ------ ОБНОВЛЕНИЕ ВСЕХ КАЛЬКУЛЯТОРОВ ------
-        function updateAllCalculators() {
-            let weight = parseFloat(document.getElementById('globalWeight').value);
-            let gender = document.getElementById('globalGender').value;
-            if (isNaN(weight) || weight <= 0) weight = 80;
-
-            const cards = document.querySelectorAll('.drink-card');
-            cards.forEach(card => {
-                const alcPercent = parseFloat(card.getAttribute('data-alc'));
-                const inputField = card.querySelector('.ml-input');
-                let volume = parseFloat(inputField.value);
-                if (isNaN(volume)) volume = 0;
-
-                const hours = calculateHours(volume, alcPercent, weight, gender);
-                const hoursSpan = card.querySelector('.hours');
-                const commentSpan = card.querySelector('.comment');
-
-                if (volume <= 0) {
-                    hoursSpan.innerText = '— ч';
-                    commentSpan.innerText = '🧪 введи миллилитры';
-                } else {
-                    let displayHours = hours;
-                    let hoursText = (displayHours % 1 === 0) ? displayHours.toFixed(0) : displayHours.toFixed(1);
-                    hoursSpan.innerText = hoursText + ' ч';
-                    if (hours < 0.8) commentSpan.innerText = '✅ почти трезв, но Рик советует не рисковать';
-                    else if (hours < 3) commentSpan.innerText = '🤨 за руль рано, жди ' + hoursText + ' ч';
-                    else if (hours < 6) commentSpan.innerText = '💀 ' + hoursText + ' ч овощем будешь, не садись за руль';
-                    else commentSpan.innerText = '⚠️ ты труп. трезвость через ' + hoursText + ' ч';
-                }
-            });
-        }
-
-        // ------ СОВЕТЫ ОТ РИКА ------
-        function showRickAdvice(type) {
-            const outputDiv = document.getElementById('adviceMessage');
-            if (type === 'drink') {
-                outputDiv.innerHTML = '<strong>Рик:</strong> «Не хочешь пьянеть, шептун, так тогда и не пей говна кусок! Лучше воду жри, идиот»';
-            } else if (type === 'sober') {
-                outputDiv.innerHTML = '<strong>Рик:</strong> «Никак, лаба-лаба-дап-дап. Разве что портал откроешь во временную линию, где ты трезвый. А так — терпи, Морти»';
-            } else if (type === 'nausea') {
-                outputDiv.innerHTML = '<strong>Рик:</strong> «Ну Морти сказал что теперь надо делать все с полной уверенностью. Я уверен, что тебе полный п@#дец! И не блюй, нытик»';
-            }
-        }
-
-        // ------ ИНИЦИАЛИЗАЦИЯ СОБЫТИЙ ------
-        function bindEvents() {
-            // все поля ввода количества
-            const allInputs = document.querySelectorAll('.ml-input');
-            allInputs.forEach(inp => {
-                inp.addEventListener('input', function(e) {
-                    let val = parseFloat(e.target.value);
-                    if (isNaN(val)) e.target.value = 0;
-                    if (val < 0) e.target.value = 0;
-                    updateAllCalculators();
-                });
-                inp.addEventListener('change', function(e) {
-                    let val = parseFloat(e.target.value);
-                    if (isNaN(val)) e.target.value = 0;
-                    if (val < 0) e.target.value = 0;
-                    updateAllCalculators();
-                });
-            });
-
-            // вес и пол
-            const weightInput = document.getElementById('globalWeight');
-            const genderSelect = document.getElementById('globalGender');
-            weightInput.addEventListener('input', () => {
-                saveUserSettings();
-                updateAllCalculators();
-            });
-            genderSelect.addEventListener('change', () => {
-                saveUserSettings();
-                updateAllCalculators();
-            });
-
-            // кнопки советов
-            const adviceBtns = document.querySelectorAll('.rick-btn');
-            adviceBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const adviceType = btn.getAttribute('data-advice');
-                    showRickAdvice(adviceType);
-                });
-            });
-        }
-
-        // Старт
-        loadUserSettings();
-        bindEvents();
-        updateAllCalculators();
-        // дополнительно сохраним при любом изменении веса вручную
-        window.addEventListener('beforeunload', () => {
-            saveUserSettings();
         });
-    })();
+    }
+    function showAdvice(type) {
+        const out = document.getElementById('adviceMessage');
+        if (type === 'drink') out.innerHTML = '<strong>Рик:</strong> «Не хочешь пьянеть, шептун, так тогда и не пей говна кусок!»';
+        else if (type === 'sober') out.innerHTML = '<strong>Рик:</strong> «Никак, лаба-лаба-дап-дап»';
+        else if (type === 'nausea') out.innerHTML = '<strong>Рик:</strong> «Ну Морти сказал что теперь надо делать все с полной уверенностью. Я уверен, что тебе полный п@#дец!»';
+    }
+    document.querySelectorAll('.ml-input').forEach(i => {
+        i.addEventListener('input', update);
+        i.addEventListener('change', update);
+    });
+    document.getElementById('globalWeight').addEventListener('input', update);
+    document.getElementById('globalGender').addEventListener('change', update);
+    update();
+    document.querySelectorAll('.rick-btn').forEach(btn => {
+        btn.addEventListener('click', () => showAdvice(btn.getAttribute('data-advice')));
+    });
 </script>
 </body>
 </html>
